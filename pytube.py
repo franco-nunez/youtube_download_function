@@ -22,7 +22,7 @@ def download_audio(url, output_path):
     try:
         yt = YouTube(url)
         audio = yt.streams.filter(only_audio=True).first()
-        audio.download(output_path=output_path, filename_prefix="audio")
+        audio.download(output_path=output_path, filename_prefix="")
         print(f"Audio '{yt.title}' downloaded successfully.")
     except Exception as e:
         print(f"Error occurred while downloading audio from '{url}': {str(e)}")
